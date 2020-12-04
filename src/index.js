@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  <div className="container-fluid bg-primary">
+  <App />
+  </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
