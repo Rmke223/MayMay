@@ -64,6 +64,9 @@ function App() {
           template={template}
           setTemplate={setTemplate}
           setCurrentPage={setCurrentPage}
+          setBearer={setBearer}
+          bearer={bearer}
+          setUserInfo={setUserInfo}
         />
       }
       {currentPage === 'generator' &&

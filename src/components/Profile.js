@@ -34,26 +34,26 @@ function Profile({ userInfo, setCurrentPage, bearer, setUserInfo, setBearer }) {
             .catch(err => console.log('error: ', err))
     }
     return (
-        <div>
+        <div className="text-center">
             <div className="row bg-primary text-white">
-                <h1 className="logo py-4 text-center col-lg-9 col-sm-12" style={{ fontSize: "10vw" }}>MEME· oir</h1>
                 <div className="col-lg-3 col-sm-12 text-center">
                     <img className="img py-2 my-2" src={Logo} alt="logo" style={{ height: 200, width: 200 }} />
                 </div>
+                <h1 className="logo py-4 text-center col-lg-9 col-sm-12" style={{ fontSize: "10vw" }}>MEME· oir</h1>
             </div>
             <div className="row text-center py-2">
                 <div className="col-lg-12 col-sm-12 bg-success">
                     <img onClick={() => setCurrentPage('profile')} className="prof img-fluid my-2" src={userInfo.profile_img} style={{ height: 100 }} />
-                    <p>{userInfo.name}</p>
+                    <p className="ree">{userInfo.name}</p>
                     <nav className="navbar bg-success ">
-                        <button className="btn btn-outline-primary bg-white mx-auto" onClick={() => setCurrentPage("profile")} type="button"><i class="fas fa-user-circle text-primary"></i> MEME· oir Profile</button>
+                        <button className="btn btn-outline-primary bg-white mx-auto" onClick={() => setCurrentPage("profile")} type="button"><i class="fas fa-user-circle text-primary"></i> Profile</button>
                         <button className="btn btn-outline-primary bg-white mx-auto" onClick={() => setCurrentPage("templates")} type="button"><i className="fas fa-plus text-success"></i> Create MEME</button>
                         <button className="btn btn-outline-primary bg-white mx-auto" onClick={() => logOut()} type="button"><i class="far fa-user text-danger"></i> Log Out</button>
                     </nav>
                 </div>
             </div>
             <h1 className="logo bg-primary text-center text-white mx-0 py-2">{userInfo.name}'s Personal MEME· oir</h1>
-
+            <button className="btn btn-outline-success text-white my-4" onClick={()=>refreshMemes()}><i className="fas fa-sync-alt text-info"></i> Refresh</button>
 
             <div className="card-columns text-center">
                 {userInfo.meme.slice(0).reverse().map(meme => {
@@ -98,12 +98,12 @@ function Profile({ userInfo, setCurrentPage, bearer, setUserInfo, setBearer }) {
                             </button>
                         </div>
                         <div className="modal-body text-center bg-success">
-                        <a className="" href="http://Facebook.com" target="_blank"><i className="fab fa-facebook-f text-primary"></i> Facebook</a><br/>
-                        <a className="" href="http://Twitter.com" target="_blank"><i className="fab fa-twitter text-info"></i> Twitter</a><br/>
-                        <a className="" href="http://instagram.com" target="_blank"><i className="fab fa-instagram text-danger"></i> Instagram</a><br/>
-                            <img src={modalURL} className="img-fluid mt-2" alt="yote"/>
+                            <a className="" href="http://Facebook.com" target="_blank"><i className="fab fa-facebook-f text-primary"></i> Facebook</a><br />
+                            <a className="" href="http://Twitter.com" target="_blank"><i className="fab fa-twitter text-info"></i> Twitter</a><br />
+                            <a className="" href="http://instagram.com" target="_blank"><i className="fab fa-instagram text-danger"></i> Instagram</a><br />
+                            <img src={modalURL} className="img-fluid mt-2" alt="yote" />
                             <p className="mt-4">Copy Link:</p>
-                            <input type="text" value={modalURL} style={{width:"75%"}} className="text-center"/>
+                            <input type="text" value={modalURL} style={{ width: "75%" }} className="text-center" />
                         </div>
                         <div className="modal-footer bg-primary">
                             <button type="button" className="btn btn-outline-success bg-white text-primary" data-dismiss="modal">Close</button>
